@@ -1,5 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Link from "next/link";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,6 +21,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
+		<nav style={{padding: '20px', borderBottom: '1px solid green', marginBottom: '30px'}}>
+			<Link href="/" style={{marginRight: '20px'}}> 홈으로 </Link>
+			<Link href="/about"> about </Link>
+		</nav>
         {children}
       </body>
     </html>

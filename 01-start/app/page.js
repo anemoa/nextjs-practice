@@ -6,9 +6,6 @@ export default function Home() {
   return (
     <div className={styles.page}>
       <main className={styles.main}>
-		<nav>
-			<Link href="/about">어바웃 페이지 가기</Link>
-		</nav>
         <Image
           className={styles.logo}
           src="/next.svg"
