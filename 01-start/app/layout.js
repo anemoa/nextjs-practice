@@ -24,6 +24,7 @@ export default function RootLayout({ children }) {
 		<nav style={{padding: '20px', borderBottom: '1px solid green', marginBottom: '30px'}}>
 			<Link href="/" style={{marginRight: '20px'}}> 홈으로 </Link>
 			<Link href="/about"> about </Link>
+			<Link href="/contact"> contact </Link>
 		</nav>
         {children}
       </body>
