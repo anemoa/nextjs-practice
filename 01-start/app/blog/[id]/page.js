@@ -1,19 +1,34 @@
-import Image from 'next/image';
-import React from 'react'
+import { blogPosts } from "@/data/blogPosts";
+import Image from "next/image";
+import React from "react";
 
-const BlogPost = ({params}) => {
+const BlogPost = ({ params }) => {
+  const { id } = params;
 
-	const {id} = params;
+  // id와 일치하는 글 찾기
+  const post = blogPosts.find(post => post.id === parseInt(id));
+
+  // 글이 없으면 리턴
+  if(!post){
+	return <div>글이 없어요!</div>
+  }
+
+  // 구조분해
+  const {title, content, image, date} = post;
+
   return (
-	<div>
-		<h1>{id} 번째 글이다</h1>
-		<Image src="/img01.jpg" alt={`${id}번 글 이미지`}
+    <div>
+      <h1>{title}</h1>
+	  <p>{content}</p>
+      <Image
+        src={image}
+        alt={`${id}번 글 이미지`}
         width={200}
-        height={400}/>
-		<p>이것은 {id}번째 글의 내용이니까 알아보자</p>
-		<p>파라미터로 받은 {id}</p>
-	</div>
-  )
-}
+        height={400}
+      />
+		<p>{date}</p>
+    </div>
+  );
+};
 
 export default BlogPost;
