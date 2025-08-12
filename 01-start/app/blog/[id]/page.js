@@ -1,5 +1,6 @@
 import { blogPosts } from "@/data/blogPosts";
 import Image from "next/image";
+import { notFound } from "next/navigation";
 import React from "react";
 
 const BlogPost = ({ params }) => {
@@ -10,7 +11,7 @@ const BlogPost = ({ params }) => {
 
   // 글이 없으면 리턴
   if(!post){
-	return <div>글이 없어요!</div>
+	notFound();
   }
 
   // 구조분해
