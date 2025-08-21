@@ -1,10 +1,14 @@
 import { notFound } from "next/navigation";
 
-
 const getBlogPost = async (id) => {
-  const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`);
+  // 1.5초 딜레이 추가
+  await new Promise((resolve) => setTimeout(resolve, 1500));
 
-  if (!res.ok) {
+  const response = await fetch(
+    `https://jsonplaceholder.typicode.com/posts/${id}`
+  );
+
+  if (!response.ok) {
     return null; // 글이 없으면 null return
   }
 

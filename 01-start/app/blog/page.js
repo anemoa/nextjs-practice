@@ -1,7 +1,9 @@
-import Image from "next/image";
 import Link from "next/link";
 
 const getBlogPosts = async () => {
+  // 2초 딜레이 추가 (로딩 확인용)
+  await new Promise((resolve) => setTimeout(resolve, 2000));
+
   const response = await fetch("https://jsonplaceholder.typicode.com/posts");
   const posts = await response.json();
 
