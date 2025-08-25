@@ -1,5 +1,16 @@
 import Link from "next/link";
 
+// 페이지별 메타데이터
+export const metadata = {
+  title: "블로그 목록 - 내 블로그",
+  description: "다양한 개발 관련 글들을 확인해보세요.",
+  openGraph: {
+    title: "블로그 목록",
+    description: "개발 블로그 글 목록",
+  },
+};
+
+
 const getBlogPosts = async () => {
   // 2초 딜레이 추가 (로딩 확인용)
   await new Promise((resolve) => setTimeout(resolve, 2000));
