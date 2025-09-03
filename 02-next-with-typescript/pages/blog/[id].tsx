@@ -21,7 +21,9 @@ const PostDetail = () => {
 			}finally{
 				setLoading(false);
 			}
-		}
+		};
+
+		fetchPost();
 	}
   }, [id])
 
