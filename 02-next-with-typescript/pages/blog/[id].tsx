@@ -1,7 +1,7 @@
-import { getPostById } from "@/lib/api";
-import { Post } from "@/types/blog";
-import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
+import { Post } from '../../types/blog';
+import { getPostById } from '../../lib/api';
 
 const PostDetail = () => {
   const [post, setPost] = useState<Post | null>(null);
@@ -9,23 +9,22 @@ const PostDetail = () => {
   const router = useRouter();
   const { id } = router.query;
 
-
   useEffect(() => {
-	if(id && typeof id === 'string'){
-		const fetchPost = async () => {
-			try{
-				const data = await getPostById(id);
-				setPost(data);
-			} catch (error){
-				console.error('에러: ', error);
-			}finally{
-				setLoading(false);
-			}
-		};
+    if (id && typeof id === 'string') {
+      const fetchPost = async () => {
+        try {
+          const data = await getPostById(id);
+          setPost(data);
+        } catch (error) {
+          console.error('에러:', error);
+        } finally {
+          setLoading(false);
+        }
+      };
 
-		fetchPost();
-	}
-  }, [id])
+      fetchPost();
+    }
+  }, [id]);
 
   if (loading) {
     return (
@@ -38,7 +37,7 @@ const PostDetail = () => {
   if (!post) {
     return (
       <div className="container">
-        <div className="loading">로딩 중...</div>
+        <div className="loading">글을 찾을 수 없습니다.</div>
       </div>
     );
   }
@@ -55,6 +54,7 @@ const PostDetail = () => {
       </article>
     </div>
   );
-};
+}
+
 
 export default PostDetail;
