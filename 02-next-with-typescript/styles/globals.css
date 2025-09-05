@@ -52,3 +52,14 @@ body {
   color: #7f8c8d;
   font-size: 1.2rem;
 }
+
+.clickable {
+  cursor: pointer;
+  color: #3498db;
+  transition: color 0.3s ease;
+}
+
+.clickable:hover {
+  color: #2980b9;
+  text-decoration: underline;
+}

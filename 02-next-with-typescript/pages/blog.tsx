@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { Post } from "../types/blog";
 import { getAllPosts } from "../lib/api";
+import Link from "next/link";
 
 export default function BlogPage() {
   const [posts, setPosts] = useState<Post[]>([]);
@@ -36,7 +37,9 @@ export default function BlogPage() {
 
       {posts.map((post) => (
         <div key={post.id} className="post-card">
-          <h2 className="post-title">{post.title}</h2>
+          <Link href={`/blog/${post.id}`}>
+            <h2 className="post-title">{post.title}</h2>
+          </Link>
           <p className="post-content">{post.body}</p>
         </div>
       ))}
