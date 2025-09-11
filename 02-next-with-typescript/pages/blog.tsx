@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { Post } from "../types/blog";
 import { getAllPosts } from "../lib/api";
 import Link from "next/link";
+import Layout from "@/components/Layout";
 
 export default function BlogPage() {
   const [posts, setPosts] = useState<Post[]>([]);
@@ -32,17 +33,19 @@ export default function BlogPage() {
   }
 
   return (
-    <div className="container">
-      <h1 className="title">내 블로그</h1>
+    <Layout>
+      <div className="container">
+        <h1 className="title">내 블로그</h1>
 
-      {posts.map((post) => (
-        <div key={post.id} className="post-card">
-          <Link href={`/blog/${post.id}`}>
-            <h2 className="post-title">{post.title}</h2>
-          </Link>
-          <p className="post-content">{post.body}</p>
-        </div>
-      ))}
-    </div>
+        {posts.map((post) => (
+          <div key={post.id} className="post-card">
+            <Link href={`/blog/${post.id}`}>
+              <h2 className="post-title">{post.title}</h2>
+            </Link>
+            <p className="post-content">{post.body}</p>
+          </div>
+        ))}
+      </div>
+    </Layout>
   );
 }
