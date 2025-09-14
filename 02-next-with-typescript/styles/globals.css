@@ -206,3 +206,85 @@ body {
 .footer p {
   margin: 0;
 }
+
+
+/* 404 에러 페이지 */
+.error-page {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 60vh;
+  text-align: center;
+  gap: 2rem;
+}
+
+.error-content {
+  flex: 1;
+}
+
+.error-title {
+  font-size: 6rem;
+  color: #e74c3c;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.error-subtitle {
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.error-description {
+  font-size: 1.1rem;
+  color: #7f8c8d;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.error-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.error-button {
+  padding: 12px 24px;
+  border-radius: 6px;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.error-button.primary {
+  background: #3498db;
+  color: white;
+}
+
+.error-button.primary:hover {
+  background: #2980b9;
+}
+
+.error-button.secondary {
+  background: #95a5a6;
+  color: white;
+}
+
+.error-button.secondary:hover {
+  background: #7f8c8d;
+}
+
+.error-illustration {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sad-face {
+  font-size: 8rem;
+  opacity: 0.7;
+}
