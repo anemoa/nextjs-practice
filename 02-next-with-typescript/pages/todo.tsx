@@ -1,10 +1,15 @@
-import Layout from '@/components/Layout'
-import React from 'react'
+import Layout from '@/components/Layout';
+
+interface Todo {
+  id: number;
+  text: string;
+  completed: boolean;
+}
 
 const TodoPage = () => {
   return (
 	<Layout>
-		<div>
+		<div className='container'>
 			<h1>할 일 관리하기</h1>
 		</div>
 	</Layout>
