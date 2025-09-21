@@ -14,6 +14,17 @@ const TodoPage = () => {
     <Layout>
       <div className="container">
         <h1>할 일 관리하기</h1>
+
+        <div className="todo-input-section">
+          <input
+            type="text"
+            value={inputText}
+            onChange={(e) => setInputText(e.target.value)}
+            placeholder="할 일을 입력하세요"
+            className="todo-input"
+          />
+          <button className="add-button">추가</button>
+        </div>
       </div>
     </Layout>
   );
