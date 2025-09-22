@@ -10,6 +10,20 @@ interface Todo {
 const TodoPage = () => {
   const [todos, setTodos] = useState<Todo[]>([]);
   const [inputText, setInputText] = useState<string>("");
+
+  const addTodo = () => {
+    if (inputText.trim() === '') return;
+    
+    const newTodo: Todo = {
+      id: Date.now(),
+      text: inputText,
+      completed: false
+    };
+    
+    setTodos([...todos, newTodo]);
+    setInputText('');
+  };
+  
   return (
     <Layout>
       <div className="container">
