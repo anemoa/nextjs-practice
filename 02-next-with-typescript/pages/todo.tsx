@@ -23,7 +23,7 @@ const TodoPage = () => {
     setTodos([...todos, newTodo]);
     setInputText('');
   };
-  
+
   return (
     <Layout>
       <div className="container">
@@ -34,10 +34,11 @@ const TodoPage = () => {
             type="text"
             value={inputText}
             onChange={(e) => setInputText(e.target.value)}
+			onKeyPress={(e) => e.key === 'Enter' && addTodo()}
             placeholder="할 일을 입력하세요"
             className="todo-input"
           />
-          <button className="add-button">추가</button>
+          <button  onClick={addTodo} className="add-button">추가</button>
         </div>
       </div>
     </Layout>
