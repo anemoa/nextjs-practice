@@ -12,16 +12,16 @@ const TodoPage = () => {
   const [inputText, setInputText] = useState<string>("");
 
   const addTodo = () => {
-    if (inputText.trim() === '') return;
-    
+    if (inputText.trim() === "") return;
+
     const newTodo: Todo = {
       id: Date.now(),
       text: inputText,
-      completed: false
+      completed: false,
     };
-    
+
     setTodos([...todos, newTodo]);
-    setInputText('');
+    setInputText("");
   };
 
   return (
@@ -34,11 +34,25 @@ const TodoPage = () => {
             type="text"
             value={inputText}
             onChange={(e) => setInputText(e.target.value)}
-			onKeyPress={(e) => e.key === 'Enter' && addTodo()}
+            onKeyDown={(e) => e.key === "Enter" && addTodo()}
             placeholder="할 일을 입력하세요"
             className="todo-input"
           />
-          <button  onClick={addTodo} className="add-button">추가</button>
+          <button onClick={addTodo} className="add-button">
+            추가
+          </button>
+        </div>
+
+        <div className="todo-list">
+          {todos.length === 0 ? (
+            <p className="empty-message">할 일이 없습니다! 🎉</p>
+          ) : (
+            todos.map((todo) => (
+              <div key={todo.id} className="todo-item">
+                <span>{todo.text}</span>
+              </div>
+            ))
+          )}
         </div>
       </div>
     </Layout>
