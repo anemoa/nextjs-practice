@@ -24,6 +24,12 @@ const TodoPage = () => {
     setInputText("");
   };
 
+
+   const deleteTodo = (id: number) => {
+    const filteredTodos = todos.filter((todo) => todo.id !== id);
+    setTodos(filteredTodos);
+  };
+
   return (
     <Layout>
       <div className="container">
