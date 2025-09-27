@@ -24,8 +24,7 @@ const TodoPage = () => {
     setInputText("");
   };
 
-
-   const deleteTodo = (id: number) => {
+  const deleteTodo = (id: number) => {
     const filteredTodos = todos.filter((todo) => todo.id !== id);
     setTodos(filteredTodos);
   };
@@ -56,6 +55,12 @@ const TodoPage = () => {
             todos.map((todo) => (
               <div key={todo.id} className="todo-item">
                 <span>{todo.text}</span>
+                <button
+                  onClick={() => deleteTodo(todo.id)}
+                  className="delete-button"
+                >
+                  삭제
+                </button>
               </div>
             ))
           )}
