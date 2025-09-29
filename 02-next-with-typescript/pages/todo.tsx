@@ -29,6 +29,13 @@ const TodoPage = () => {
     setTodos(filteredTodos);
   };
 
+  const toggleTodo = (id: number) => {
+    const updatedTodos = todos.map((todo) => 
+      todo.id === id ? { ...todo, completed: !todo.completed } : todo
+    );
+    setTodos(updatedTodos);
+  };
+
   return (
     <Layout>
       <div className="container">
