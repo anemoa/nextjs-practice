@@ -30,7 +30,7 @@ const TodoPage = () => {
   };
 
   const toggleTodo = (id: number) => {
-    const updatedTodos = todos.map((todo) => 
+    const updatedTodos = todos.map((todo) =>
       todo.id === id ? { ...todo, completed: !todo.completed } : todo
     );
     setTodos(updatedTodos);
@@ -61,7 +61,15 @@ const TodoPage = () => {
           ) : (
             todos.map((todo) => (
               <div key={todo.id} className="todo-item">
-                <span>{todo.text}</span>
+                <input
+                  type="checkbox"
+                  checked={todo.completed}
+                  onChange={() => toggleTodo(todo.id)}
+                  className="todo-checkbox"
+                />
+                <span className={todo.completed ? "completed" : ""}>
+                  {todo.text}
+                </span>
                 <button
                   onClick={() => deleteTodo(todo.id)}
                   className="delete-button"
