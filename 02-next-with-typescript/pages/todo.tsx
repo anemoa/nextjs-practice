@@ -69,7 +69,7 @@ const TodoPage = () => {
                 />
                 <span className={todo.completed ? "completed" : ""}>
                   {todo.text}
-                </span>
+                </span> 
                 <button
                   onClick={() => deleteTodo(todo.id)}
                   className="delete-button"
