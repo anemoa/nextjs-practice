@@ -1,6 +1,11 @@
 import { products } from '@/data/products';
 
-const ProductList = () => {
+
+interface Props {
+  onAddToCart: (productId: number) => void;
+}
+
+const ProductList = ({ onAddToCart }: Props) => {
   return (
      <div>
       <h2>상품 목록</h2>
