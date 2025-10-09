@@ -1,3 +1,4 @@
+import Cart from "@/components/Cart";
 import ProductList from "@/components/ProductList";
 import { products } from "@/data/products";
 import { CartItem } from "@/types/product";
@@ -34,6 +35,7 @@ const Home = () => {
       <h1>쇼핑 카트 🛒</h1>
       <p>장바구니: {cart.length}개</p>
       <ProductList onAddToCart={addToCart} />
+	  <Cart cart={cart} /> 
     </div>
   );
 };
