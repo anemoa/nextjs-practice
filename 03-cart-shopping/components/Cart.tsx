@@ -43,7 +43,7 @@ export default function Cart({ cart }: Props) {
           ))}
           
           <div style={{ marginTop: '20px', fontSize: '20px', fontWeight: 'bold' }}>
-            총 가격: {totalPrice.toLocaleString()}원
+            총 가격: {totalPrice.toLocaleString()}원(₩)
           </div>
         </>
       )}
